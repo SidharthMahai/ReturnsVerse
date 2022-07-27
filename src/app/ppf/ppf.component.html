@@ -1,3 +1,44 @@
-<p>
-  <br><br>ppf works! 
-</p>
+<div class="card">
+  <div class="card-body">
+    <div class="cover-container h-100 p-3 mx-auto flex-column">
+      <main role="main" class="inner cover">
+        <span class="heading1">Calculate Returns on PPF</span>
+        <br><br>
+        <span class="heading">Rate of Interest</span><br> 7.1%
+        <br><br>
+        <span class="heading">Yearly Investment in PPF</span><br>
+        <mat-slider
+          thumbLabel = "Yearly Investment in PPF"
+          [displayWith]="formatLabel"
+          tickInterval="500"
+          step="500"
+          min="500"
+          max="150000"
+          aria-label="units"
+          (input)="onInputChange($event)"
+        ></mat-slider>
+        {{this.investment}}
+
+        <br>
+        <span class="heading">Number of Years</span><br>
+        <mat-slider
+          thumbLabel 
+          [displayWith]="formatLabel"
+          tickInterval="1"
+          step="1"
+          min="15"
+          max="50"
+          aria-label="units"
+          (input)="onYearChange($event)"
+        ></mat-slider>
+        {{this.years}}
+        <div *ngIf="this.valueChange">
+        <br> <br>
+        <span class="heading">Amount you Invested: {{this.amountInvested}}</span><br><br>
+        <span class="heading">Total Amount including Interest: {{this.maturityAmount}}</span><br><br>
+        <span class="heading">Profit: {{this.profit}}</span>
+      </div>
+      </main>
+    </div>
+  </div>
+</div>
