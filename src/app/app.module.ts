@@ -8,13 +8,15 @@ import { PpfComponent } from './ppf/ppf.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
       NavbarComponent,
       PpfComponent,
-      AboutComponent
+      AboutComponent,
+      HomeComponent
    ],
   imports: [
     BrowserModule,

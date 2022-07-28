@@ -46,21 +46,22 @@
           <span class="heading"
             >Profit: {{ this.profit | currency: "INR":true }}</span
           >
-          <br><br>
+          <br /><br />
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
+              <div class="accordion-header" id="headingOne">
                 <button
                   class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
-                  aria-expanded="true"
+                  aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  Want to Understand how this {{this.maturityAmount | currency: "INR":true}} got to be?
+                  Want to Understand how this
+                  {{ this.maturityAmount | currency: "INR":true }} got to be?
                 </button>
-              </h2>
+              </div>
               <div
                 id="collapseOne"
                 class="accordion-collapse collapse"
@@ -73,20 +74,26 @@
                       <tr>
                         <th scope="col">Year</th>
                         <th scope="col">Amount you invested(A)</th>
-                        <th scope="col">Invested value in start of year(B = A of this year + D of last year)</th>
-                        <th scope="col">Interest gained for this year(C = Interest on B)</th>
-                        <th scope="col">Total value at end of year(D = B + C)</th>
+                        <th scope="col">
+                          Invested value in start of year(B = A of this year + D
+                          of last year)
+                        </th>
+                        <th scope="col">
+                          Interest gained for this year(C = Interest on B)
+                        </th>
+                        <th scope="col">
+                          Total value at end of year(D = B + C)
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let inv of PPFList">
-                        <td>{{inv.year}}</td>
-                        <td>{{inv.newInvestment}}</td>
-                        <td>{{inv.totalInvestment}}</td>
-                        <td>{{inv.interest}}</td>
-                        <td>{{inv.investmentIncludingInterest}}</td>
+                        <td>{{ inv.year }}</td>
+                        <td>{{ inv.newInvestment }}</td>
+                        <td>{{ inv.totalInvestment }}</td>
+                        <td>{{ inv.interest }}</td>
+                        <td>{{ inv.investmentIncludingInterest }}</td>
                       </tr>
-                      
                     </tbody>
                   </table>
                 </div>
