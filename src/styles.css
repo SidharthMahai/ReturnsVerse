@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card {
+    box-shadow: 10px 10px 8px #888888;
+}
+
+body {
+    background-image: url("assets/bg.jpg");
+    background-size: 100% ;  
+    background-size: cover;   
+}
