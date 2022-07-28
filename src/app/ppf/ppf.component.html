@@ -3,12 +3,12 @@
     <div class="cover-container h-100 p-3 mx-auto flex-column">
       <main role="main" class="inner cover">
         <span class="heading1">Calculate Returns on PPF</span>
-        <br><br>
-        <span class="heading">Rate of Interest</span><br> 7.1%
-        <br><br>
-        <span class="heading">Yearly Investment in PPF</span><br>
+        <br /><br />
+        <span class="heading">Rate of Interest</span><br />
+        7.1% <br /><br />
+        <span class="heading">Yearly Investment in PPF</span><br />
         <mat-slider
-          thumbLabel = "Yearly Investment in PPF"
+          thumbLabel="Yearly Investment in PPF"
           [displayWith]="formatLabel"
           tickInterval="500"
           step="500"
@@ -17,12 +17,12 @@
           aria-label="units"
           (input)="onInputChange($event)"
         ></mat-slider>
-        {{this.investment}}
+        {{ this.investment | currency: "INR":true }}
 
-        <br>
-        <span class="heading">Number of Years</span><br>
+        <br />
+        <span class="heading">Number of Years</span><br />
         <mat-slider
-          thumbLabel 
+          thumbLabel
           [displayWith]="formatLabel"
           tickInterval="1"
           step="1"
@@ -31,13 +31,69 @@
           aria-label="units"
           (input)="onYearChange($event)"
         ></mat-slider>
-        {{this.years}}
+        {{ this.years }}
         <div *ngIf="this.valueChange">
-        <br> <br>
-        <span class="heading">Amount you Invested: {{this.amountInvested}}</span><br><br>
-        <span class="heading">Total Amount including Interest: {{this.maturityAmount}}</span><br><br>
-        <span class="heading">Profit: {{this.profit}}</span>
-      </div>
+          <br />
+          <br />
+          <span class="heading"
+            >Amount you Invested:
+            {{ this.amountInvested | currency: "INR":true }}</span
+          ><br /><br />
+          <span class="heading"
+            >Total Amount including Interest:
+            {{ this.maturityAmount | currency: "INR":true }}</span
+          ><br /><br />
+          <span class="heading"
+            >Profit: {{ this.profit | currency: "INR":true }}</span
+          >
+          <br><br>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Want to Understand how this {{this.maturityAmount | currency: "INR":true}} got to be?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col">Amount you invested(A)</th>
+                        <th scope="col">Invested value in start of year(B = A of this year + D of last year)</th>
+                        <th scope="col">Interest gained for this year(C = Interest on B)</th>
+                        <th scope="col">Total value at end of year(D = B + C)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let inv of PPFList">
+                        <td>{{inv.year}}</td>
+                        <td>{{inv.newInvestment}}</td>
+                        <td>{{inv.totalInvestment}}</td>
+                        <td>{{inv.interest}}</td>
+                        <td>{{inv.investmentIncludingInterest}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   </div>
