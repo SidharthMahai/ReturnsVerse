@@ -1,3 +1,30 @@
-<p>
-  percentagecalculator works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <div class="cover-container h-100 p-3 mx-auto flex-column">
+      <main role="main" class="inner cover">
+        <span class="heading1">Calculate Percentage Gain/Loss</span>
+        <br /><br />
+        <mat-form-field appearance="fill">
+          <mat-label>Initial Value</mat-label>
+          <input matInput [(ngModel)]="initialValue"/>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Final Value</mat-label>
+          <input matInput [(ngModel)]="finalValue" />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Percentage Gain/Loss</mat-label>
+          <input matInput [(ngModel)]="percentageValue" />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+          <mat-label>Difference</mat-label>
+          <input matInput [(ngModel)]="differenceValue" />
+        </mat-form-field>
+      </main>
+    </div>
+  </div>
+</div>
