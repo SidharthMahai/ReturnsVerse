@@ -9,14 +9,16 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import { HomeComponent } from './home/home.component';
+import { PercentagecalculatorComponent } from './percentagecalculator/percentagecalculator.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
       NavbarComponent,
       PpfComponent,
       AboutComponent,
-      HomeComponent
+      HomeComponent,
+      PercentagecalculatorComponent
    ],
   imports: [
     BrowserModule,
