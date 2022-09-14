@@ -18,6 +18,12 @@
     font-size: large;
   }
 
+  .mat-input-element:disabled {
+    color: black;
+  }
 
+  .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-label {
+    color: black;
+  }
   
 

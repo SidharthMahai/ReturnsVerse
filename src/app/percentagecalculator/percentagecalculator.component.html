@@ -6,23 +6,23 @@
         <br /><br />
         <mat-form-field appearance="fill">
           <mat-label>Initial Value</mat-label>
-          <input matInput [(ngModel)]="initialValue"/>
+          <input matInput [(ngModel)]="initialValue" (input)="onInitialChange()" />
         </mat-form-field>
 
         <br />
         <mat-form-field appearance="fill">
           <mat-label>Final Value</mat-label>
-          <input matInput [(ngModel)]="finalValue" />
+          <input matInput [(ngModel)]="finalValue" (input)="onFinalChange()" />
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill">
           <mat-label>Percentage Gain/Loss</mat-label>
-          <input matInput [(ngModel)]="percentageValue" />
+          <input matInput [(ngModel)]="percentageValue" (input)="onPercentageChange()" />
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill">
           <mat-label>Difference</mat-label>
-          <input matInput [(ngModel)]="differenceValue" />
+          <input disabled matInput [(ngModel)]="differenceValue" />
         </mat-form-field>
       </main>
     </div>
