@@ -1,6 +1,43 @@
-.carousel {
-    margin-top: 0.5%;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 4%;
-}
+
+/**
+  * Gyro
+  *
+  * @author jh3y - https://github.com/jh3y
+*/
+@-webkit-keyframes gyro {
+    0% {
+      -webkit-transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%));
+              transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%)); }
+    50% {
+      -webkit-transform: scale(0.5) rotate(1440deg) translateY(0);
+              transform: scale(0.5) rotate(1440deg) translateY(0); }
+    100% {
+      -webkit-transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%));
+              transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%)); } }
+  @keyframes gyro {
+    0% {
+      -webkit-transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%));
+              transform: scale(1) rotate(0deg) translateY(calc(var(--radius) * 1%)); }
+    50% {
+      -webkit-transform: scale(0.5) rotate(1440deg) translateY(0);
+              transform: scale(0.5) rotate(1440deg) translateY(0); }
+    100% {
+      -webkit-transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%));
+              transform: scale(1) rotate(2920deg) translateY(calc(var(--radius) * 1%)); } }
+  
+  .gyro:after, .gyro:before {
+    --radius: 250;
+    -webkit-animation: gyro 2s infinite linear;
+            animation: gyro 2s infinite linear;
+    background: white;
+    border-radius: 100%;
+    content: '';
+    height: 20px;
+    margin-top: 16%;
+    margin-left: 45%;
+    width: 20px;
+    position: absolute; }
+  
+  .gyro:before {
+    --radius: -250;
+    background: orange }
